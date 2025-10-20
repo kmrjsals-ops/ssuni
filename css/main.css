@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+/*main.css*/
+/*pc버전 해상도일 경우 적용되는 서식*/
+main{
+  position:relative;
+  top:40px;
+  margin-bottom:60px;
+}
+.mslide{
+  position:relative;
+  width:100%;height:68vh;
+  overflow:hidden;
+}
+.mslide img{
+  width:100%;
+  position: absolute;
+  left:0px;top:0px;
+  object-fit: cover;
+}
+.mslide div > a:first-child img{z-index:3;}
+.mslide div > a:nth-child(2) img{z-index:2;}
+.mslide div > a:last-child img{z-index:1;}
+
+.clearfix::after{ /* 슬라이드의 가로너비가 변할때 높이값도 자동으로 인식되도록 한다.*/
+  content:'';
+  display:block;
+  clear:both;
+  padding-top:300%;
+}
+/* 콘트롤 버튼 서식 */
+.mslide .c_btn{
+  color:#333;
+  width:60px;
+  position:absolute;bottom:3%;
+  left:50%;
+  transform: translate(-50%);
+  z-index:100;
+  display:flex;
+  justify-content: space-around;
+  font-size:1rem;
+}
+.mslide i.fas{
+  font-size:1.1rem;
+  cursor:pointer; 
+}
+
+/*콘텐츠 2영역 서식*/
+.cont{
+  width: 1200px;
+  margin:10px auto; /*슬라이드와 푸터영역 간격주기 위해*/
+  display: grid;
+  grid-gap: 10px;
+  box-sizing: border-box;
+  /*2줄 3칸으로 설정하기*/
+  grid-template-columns: repeat(3, auto);/*가로 400px*/
+  grid-template-rows: repeat(2, auto);
+}
+.cont h2{display: none;}
+.cont img{width: 100%;}
+.notice h2,.news h2{display: block;}
+
+.banner{width: 360px; height: 348px; 
+  overflow: hidden;}
+.banner img{width: 100%; height: auto;}
+.story{width: 460px;}
+.story .bs{
+  width: 100%; height: 180px;
+  display: inline-block;
+  overflow: hidden;
+}
+.story .bs:hover img{display: none;}
+.story .bs:hover{
+  background: url(../images/mbn0202ov.png) no-repeat;
+  background-size: 100%;
+}
+.ad{width: 360px;}
+/*공지사항,뉴스 기사 목록 서식*/
+.notice, .news{
+  width: 360px;
+}
+.notice > h2, .news > h2{
+  text-transform: uppercase;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.4rem;
+  border-bottom: 1px solid#333;
+  line-height: 40px;
+  padding: 6px 1.2% 0 1.2%;
+  margin-bottom: 10px;
+}
+.notice > h2 .fa-plus, .news > h2 .fa-plus{
+  float: right;
+  border: 1px solid#333;
+  padding: 3px 5px;
+  transform: translateY(7px);
+  cursor: pointer;
+}
+
+/*기사 글목록*/
+.notice li, .news li{
+  line-height: 30px;
+  text-indent: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.notice a:hover, .news a:hover{
+  text-decoration: underline;
+}
+.store{text-align: center;}
+.store img{width: 93%;}
+
+aside{
+  position: fixed;
+  right: 0px;
+  top: 47%;
+  background: #b3b3b3;
+  z-index: 100000;
+}
+
+@media screen and (max-width:1024px){
+/*grid 속성 변경*/
+/*수정*/
+.cont{
+  width: 800px;
+  margin:10px auto; /*슬라이드와 푸터영역 간격주기 위해*/
+  display: grid;
+  grid-gap: 10px;
+  box-sizing: border-box;
+  /*2줄 3칸으로 설정하기*/
+  grid-template-columns: repeat(2, 1fr);/*가로 400px*/
+  grid-template-rows: repeat(5, auto);
+}
+.cont .banner{
+  grid-area:1/1/3/2;
+}
+
+}
+
+/* 모바일 해상도일 경우 서식 */
+@media screen and (max-width:767px) {
+  /*grid 속성 변경*/
+  main{top:0px;}
+  .mslide{height:40vh;}
+  .mslide img{height:380px !important;}
+  .mslide div{width:100%;}
+}
+

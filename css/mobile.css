@@ -1,0 +1,154 @@
+    /* mobile 해상도(0 ~ 767px)일 경우 배경색 하늘 */
+    @media screen and (max-width:767px) {
+
+      #btn_search{display:block;}
+
+      .header_inner, .gnb, .f_inner{
+        width:100%;
+      }
+      .header_inner{
+        height:70px;
+        background:#ffffff;
+        box-shadow:0px 0px 3px rgb(63,63,63);
+      }
+
+      /* 로고 가운데 정렬 */
+      .header_inner h1{
+        width:100%;
+        text-align:center;
+        transform:none;
+        padding-top:10px;
+      }
+      .header_inner h1 img{
+        width:130px;
+      }
+
+      /* 햄버거 메뉴, 검색버튼 나오게 */
+      #t_btn, #m_search{
+        display:block;
+        position:absolute;
+        top:12px;
+      }
+      #t_btn{left:10px;}
+      #m_search{right:10px;}
+      #t_btn > i.fa-bars, #m_search{
+        font-size:2rem;
+        padding:7px;
+      }
+
+      
+      /* 모바일 내비게이션 */
+      .gnb_wrap{background:none;height:0px;}
+      .gnb{
+        position:fixed;
+        left:-100%;top:0px;
+        width:100%;height:100%;
+        background:rgba(0,0,0,.9);
+        z-index:100;
+        flex-direction: column;/* 세로목록 */
+        transition:0.5s;
+        padding-top:100px;
+      }
+      .gnb:hover{height:100%;}
+      .gnb > li{
+        text-align:left;
+        border-bottom:1px solid #fff;
+      }
+      .gnb > li > a{
+        font-size:0.9rem;color:#fff;
+      }
+      .gnb > li > a::after{display:none;}
+
+      /* 서브메뉴 숨기기 */
+      .sub{display:none;}
+
+      /* 모바일 우측 상단 '닫기' 버튼 */ 
+      .gnb_wrap > label[for=toggle_btn]{
+        position:fixed;
+        left:-100%;top:20px;
+        z-index:200;
+        display:block;
+        font-size:2rem;
+        transition:0.46s;
+      }
+      .gnb_wrap > label[for=toggle_btn] i.fas{color:#ffffff;}
+      .gnb > li > a > i.fas{
+        display:inline;
+        color:#ffffff;
+        float:right;
+        font-size:1.3rem;
+        margin-top:10px;
+      }
+      #sh{
+        position:absolute;left:18%;top:-348px;
+        background:#ffffff;
+        z-index:1000;width:260px;
+        height:36px;
+      }
+      #sh + label[for=sh]{
+        position:absolute;
+        left:77%;top:-345px;
+        z-index:10001;
+      }
+      #sh + label i.fas{
+        color:#fff;
+        font-size:1.6rem;
+      }
+
+      /* 모바일 전체메뉴 클릭시 내비게이션 나오게 하기 */
+      #toggle_btn:checked + header .gnb{
+        left:0px;top:0px;
+      }
+
+      /* 닫기 버튼 나오고 숨기기 */
+      #toggle_btn:checked + header .gnb_wrap label[for=toggle_btn]{
+        left:90%;
+      }
+      /* 상단 메뉴 */
+      #toggle_btn:checked + header .header_inner .lnb{
+        left:0%;
+      }
+
+      /* 헤더 상단 메뉴 lnb */
+      .header_inner .lnb{
+        position:fixed;
+        left:-100%;top:400px;
+        width:100%;
+        transition:0.5s;
+        z-index:1000;
+      }
+      .header_inner .lnb ul{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .header_inner .lnb ul li{
+        display:inline-block;
+        width:48%;
+        text-align:center;
+        background-color:rgb(107,107,107);
+        margin-bottom:5px;
+      }
+      .header_inner .lnb a{
+        display:block;
+        line-height:300%;
+        color:#fff;
+        border-right:none;
+      }
+      .header_inner .lnb a:hover{
+        text-decoration: none;
+      }
+
+      footer{font-size:0.8rem;}
+      footer .f_lnb > ul{
+        justify-content: center;
+        flex-wrap:wrap;
+      }
+      footer .f_lnb > ul li a{
+        line-height:230%;
+      }
+      footer .sns > ul{
+        padding:10px 0px;
+        justify-content: center;
+      }
+      footer address{text-align:center;}
+    }

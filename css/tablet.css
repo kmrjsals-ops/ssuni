@@ -1,0 +1,30 @@
+  /* table 해상도(최소 768 ~ 1024px)일 경우 배경색 초록 */
+    @media screen and (min-width:768px) and (max-width:1024px) {
+
+      .header_inner, .gnb, .f_inner{
+        width:100%;
+      }
+      h1{position:absolute;z-index:1000;}
+      #t_btn{
+        display:block;
+        position:absolute;
+        right:10px;
+        top:64px;
+        z-index:100;
+        font-size:2rem;
+      }
+      .gnb_wrap{top:60px;}
+      .gnb{
+        width:86%;
+        margin-right:5%;
+      }
+      .gnb > li{margin:0 2%;}
+
+      footer{padding-top:40px;}
+      .f_lnb > ul > li{margin:0px 1%;}
+      /* 
+        px단위를 %단위로 환산하는 방법
+      */
+      .sns{margin-right:2.8%;}
+      address > p{text-indent:10px;}
+}
